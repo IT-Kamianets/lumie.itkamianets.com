@@ -1,26 +1,128 @@
 [
 	{
-		"name": "Food",
+		"name": "Їжа",
 		"description": "",
 		"parent": "",
 		"slug": "food"
 	},
 	{
-		"name": "Drinks",
+		"name": "Напої",
 		"description": "",
 		"parent": "",
 		"slug": "drinks"
 	},
 	{
-		"name": "Breakfasts",
-		"description": "Morning meals and light starters.",
+		"name": "Сніданки",
+		"description": "Ранкові страви та легкі закуски.",
 		"parent": "food",
 		"slug": "breakfasts"
 	},
 	{
-		"name": "Coffee",
-		"description": "Hot and cold coffee drinks.",
+		"name": "Закуски",
+		"description": "Легкі закуски та холодні страви.",
+		"parent": "food",
+		"slug": "appetizers"
+	},
+	{
+		"name": "Салати",
+		"description": "Свіжі та теплі салати.",
+		"parent": "food",
+		"slug": "salads"
+	},
+	{
+		"name": "Гарніри",
+		"description": "Картопляні та круп’яні гарніри.",
+		"parent": "food",
+		"slug": "side-dishes"
+	},
+	{
+		"name": "Перші страви",
+		"description": "Борщі, бульйони, солянка та крем-супи.",
+		"parent": "food",
+		"slug": "soups"
+	},
+	{
+		"name": "Основні страви",
+		"description": "Гарячі м’ясні, рибні та авторські страви.",
+		"parent": "food",
+		"slug": "main-dishes"
+	},
+	{
+		"name": "Страви Гриль",
+		"description": "Стейки, м’ясні сети та овочі з гриля.",
+		"parent": "food",
+		"slug": "grill"
+	},
+	{
+		"name": "Пасти",
+		"description": "Пасти з морепродуктами, рибою, куркою та соусами.",
+		"parent": "food",
+		"slug": "pastas"
+	},
+	{
+		"name": "Бургери",
+		"description": "Фірмові, м’ясні, рибні та овочеві бургери.",
+		"parent": "food",
+		"slug": "burgers"
+	},
+	{
+		"name": "Піца",
+		"description": "Піца 30 см та 35 см.",
+		"parent": "food",
+		"slug": "pizza"
+	},
+	{
+		"name": "Закуски до пива",
+		"description": "Хрусткі снеки, м’ясні закуски та сети до пива.",
+		"parent": "food",
+		"slug": "beer-snacks"
+	},
+	{
+		"name": "Десерти та Вафлі",
+		"description": "Десерти, морозиво, солодкі та солоні вафлі.",
+		"parent": "food",
+		"slug": "desserts-waffles"
+	},
+	{
+		"name": "Пиво",
+		"description": "Розливне, пляшкове та безалкогольне пиво.",
 		"parent": "drinks",
-		"slug": "coffee"
+		"slug": "beer"
+	},
+	{
+		"name": "Вино та Ігристе",
+		"description": "Ігристі вина та вина в асортименті.",
+		"parent": "drinks",
+		"slug": "wine-sparkling"
+	},
+	{
+		"name": "Міцний алкоголь",
+		"description": "Віскі, коньяк, горілка, джин, ром і текіла.",
+		"parent": "drinks",
+		"slug": "spirits"
+	},
+	{
+		"name": "Коктейлі",
+		"description": "Класичні, авторські коктейлі та шоти.",
+		"parent": "drinks",
+		"slug": "cocktails"
+	},
+	{
+		"name": "Безалкогольні напої",
+		"description": "Соки, газовані напої, вода та узвар.",
+		"parent": "drinks",
+		"slug": "soft-drinks"
+	},
+	{
+		"name": "Смузі, Фреші та Шейки",
+		"description": "Фірмові смузі, свіжі фреші та мілк-шейки.",
+		"parent": "drinks",
+		"slug": "smoothies-fresh-shakes"
+	},
+	{
+		"name": "Кава та гарячі напої",
+		"description": "Кава, какао, чай і глінтвейн.",
+		"parent": "drinks",
+		"slug": "coffee-hot-drinks"
 	}
 ]

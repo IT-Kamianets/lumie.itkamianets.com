@@ -4,12 +4,18 @@
 	</h1>
 
 	@if (!showOnlyFavorites || !!dishService.favoriteDishes().length) {
-		<app-menu-categories
-			[filteredCategories]="filteredCategories()"
-			[filteredSelectedCategories]="filteredSelectedCategories()"
-		/>
+		@if (!showOnlyFavorites) {
+			<app-menu-categories
+				[filteredCategories]="filteredCategories()"
+				[filteredSelectedCategories]="filteredSelectedCategories()"
+			/>
+		}
 
-		<app-menu-dishes [selectedCategories]="filteredSelectedCategories()" />
+		<app-menu-dishes
+			[flatList]="showOnlyFavorites"
+			[filteredDishes]="showOnlyFavorites ? dishes() : undefined"
+			[selectedCategories]="filteredSelectedCategories()"
+		/>
 	} @else {
 		<section
 			class="rounded-[1.2rem] border border-dashed border-[var(--c-border)] bg-[var(--c-bg-secondary)] px-4 py-10 text-center sm:px-6 sm:py-14"

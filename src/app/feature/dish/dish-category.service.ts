@@ -30,16 +30,31 @@ export class DishCategoryService {
 		);
 	}
 
-	selectCategory(
-		category: DishCategory,
-		categories: DishCategory[],
-		selectedCategories: DishCategory[] = [],
-	) {
-		while (categories.length) {
-			selectedCategories.push(category);
-			categories = categories[0].children ?? [];
+	clearSelection() {
+		this.selectedCategories.set([]);
+	}
+
+	selectCategory(category: DishCategory, _categories: DishCategory[]) {
+		this.selectedCategories.set(this._buildCategoryPath(category));
+	}
+
+	private _buildCategoryPath(category: DishCategory): DishCategory[] {
+		const categories = this._categories();
+		const path: DishCategory[] = [category];
+		let parentSlug = category.parent;
+
+		while (parentSlug) {
+			const parentCategory = categories.find((entry) => entry.slug === parentSlug);
+
+			if (!parentCategory) {
+				break;
+			}
+
+			path.unshift(parentCategory);
+			parentSlug = parentCategory.parent;
 		}
-		this.selectedCategories.set(selectedCategories);
+
+		return path;
 	}
 
 	private _mapCategory(category: DishCategory): DishCategory {

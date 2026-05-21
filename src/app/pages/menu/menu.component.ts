@@ -1,11 +1,4 @@
-import {
-	ChangeDetectionStrategy,
-	Component,
-	computed,
-	effect,
-	inject,
-	untracked,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../shared/translate.pipe';
 import { MenuCategoriesComponent } from '../../components/menu-categories/menu-categories.component';
@@ -24,7 +17,7 @@ export class MenuComponent {
 	readonly showOnlyFavorites = inject(Router).url === '/favorites';
 	readonly dishCategoryService = inject(DishCategoryService);
 	readonly dishService = inject(DishService);
-	private readonly dishes = computed(() => {
+	readonly dishes = computed(() => {
 		const favoriteDishes = this.dishService.favoriteDishes();
 		return this.dishService.dishes().filter((dish) => favoriteDishes.includes(dish.slug));
 	});
@@ -47,22 +40,5 @@ export class MenuComponent {
 			!!dishes.filter((dish) => dish.categorySlug === category.slug).length ||
 			!!category.children?.filter((_category) => this._hasFavorite(_category, dishes))?.length
 		);
-	}
-
-	constructor() {
-		effect(() => {
-			const categories = this.filteredCategories();
-			untracked(() => {
-				if (
-					categories.length &&
-					this.dishCategoryService.selectedCategories()[0]?.slug !== categories[0].slug
-				) {
-					this.dishCategoryService.selectCategory(
-						categories[0],
-						categories[0].children ?? [],
-					);
-				}
-			});
-		});
 	}
 }

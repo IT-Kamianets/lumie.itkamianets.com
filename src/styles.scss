@@ -48,9 +48,41 @@
 	}
 }
 
+@layer utilities {
+	.border {
+		border-width: var(--border-w);
+	}
+
+	.border-t {
+		border-top-width: var(--border-w);
+	}
+
+	.border-r {
+		border-right-width: var(--border-w);
+	}
+
+	.border-b {
+		border-bottom-width: var(--border-w);
+	}
+
+	.border-l {
+		border-left-width: var(--border-w);
+	}
+
+	.border-x {
+		border-left-width: var(--border-w);
+		border-right-width: var(--border-w);
+	}
+
+	.border-y {
+		border-top-width: var(--border-w);
+		border-bottom-width: var(--border-w);
+	}
+}
+
 html,
 body {
-	background: var(--c-bg-primary);
+	background-color: var(--c-bg-primary);
 	color: var(--c-text-primary);
 	font-family: var(--ff-base);
 	font-size: var(--fs);

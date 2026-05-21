@@ -32,7 +32,7 @@ import { ScrollService } from './services/scroll.service';
 							class="flex min-w-0 flex-col items-center justify-center gap-1 rounded-[0.9rem] px-1 py-2 text-[11px] font-medium text-[var(--c-text-muted)] transition-colors duration-200 hover:bg-[var(--c-bg-primary)]"
 							[routerLink]="item.route"
 							[routerLinkActiveOptions]="{ exact: item.exact }"
-							routerLinkActive="bg-[color:rgba(197,61,61,0.1)] text-[var(--c-secondary)]"
+							routerLinkActive="bg-[color:var(--c-tint-1)] text-[var(--c-secondary)]"
 						>
 							<span class="material-symbols-outlined text-[21px]" aria-hidden="true">
 								{{ item.icon }}
@@ -71,9 +71,9 @@ export class App {
 	protected readonly navItems = [
 		{ label: 'Nav', icon: 'navigation', route: '/navigation', exact: true },
 		{ label: 'Gallery', icon: 'photo_library', route: '/gallery', exact: true },
-		{ label: 'Socials', icon: 'share', route: '/socials', exact: true },
-		{ label: 'Favorite', icon: 'favorite', route: '/favorites', exact: true },
 		{ label: 'Menu', icon: 'restaurant_menu', route: '/', exact: true },
+		{ label: 'Favorite', icon: 'favorite', route: '/favorites', exact: true },
+		{ label: 'Socials', icon: 'share', route: '/socials', exact: true },
 	];
 
 	constructor() {

@@ -1,17 +1,32 @@
 [
 	{
-		"slug": "horeca-bar-service-photo",
-		"src": "gallery/demo-1.webp",
-		"alt": "Horeca bar service photo"
+		"slug": "lumie-burger-dish",
+		"src": "/gallery/InstaSweet1554835955139.jpg",
+		"alt": "Lumie burger dish"
 	},
 	{
-		"slug": "horeca-hotel-reception-photo-1",
-		"src": "gallery/demo-2.webp",
-		"alt": "Horeca hotel reception photo"
+		"slug": "lumie-drink",
+		"src": "/gallery/unnamed (3).jpg",
+		"alt": "Lumie drink"
 	},
 	{
-		"slug": "horeca-hotel-reception-photo-2",
-		"src": "gallery/demo-3.webp",
-		"alt": "Horeca hotel reception photo"
+		"slug": "lumie-salad",
+		"src": "/gallery/unnamed (4).jpg",
+		"alt": "Lumie salad"
+	},
+	{
+		"slug": "lumie-fire-bowl",
+		"src": "/gallery/unnamed (5).jpg",
+		"alt": "Lumie fire bowl with food"
+	},
+	{
+		"slug": "lumie-desserts",
+		"src": "/gallery/unnamed (6).jpg",
+		"alt": "Lumie desserts"
+	},
+	{
+		"slug": "lumie-restaurant-interior",
+		"src": "/gallery/unnamed (7).jpg",
+		"alt": "Lumie restaurant interior"
 	}
 ]

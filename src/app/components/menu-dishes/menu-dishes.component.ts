@@ -24,10 +24,12 @@ export class MenuDishesComponent {
 	private readonly _dishService = inject(DishService);
 	private readonly _dishCategoryService = inject(DishCategoryService);
 	readonly selectedCategories = input<DishCategory[]>();
+	readonly filteredDishes = input<Dish[] | undefined>();
+	readonly flatList = input(false);
+	readonly selectedCategoriesSignal = this._dishCategoryService.selectedCategories;
 
 	readonly categories = computed(() => {
-		const selectedCategories =
-			this.selectedCategories() ?? this._dishCategoryService.selectedCategories();
+		const selectedCategories = this.selectedCategories() ?? this.selectedCategoriesSignal();
 		const lastSelectedCategory = selectedCategories[selectedCategories.length - 1];
 
 		if (lastSelectedCategory?.children?.length) {
@@ -38,13 +40,22 @@ export class MenuDishesComponent {
 			return [lastSelectedCategory];
 		}
 
-		return this._dishCategoryService.flatCategories().filter((category) => !category.parent);
+		const defaultCategory = this._dishCategoryService.categories()[0];
+
+		if (defaultCategory?.children?.length) {
+			return defaultCategory.children;
+		}
+
+		return defaultCategory ? [defaultCategory] : [];
 	});
 
 	protected readonly sections = computed(() =>
 		this.categories()
 			.map((category) => this._toSection(category))
 			.filter((section) => section.dishes.length > 0),
+	);
+	protected readonly flatDishes = computed(() =>
+		(this.filteredDishes() ?? this._dishService.dishes()).map((dish) => this._toMenuDish(dish)),
 	);
 
 	private _toSection(category: DishCategory): DishSection {
@@ -66,8 +77,9 @@ export class MenuDishesComponent {
 				.map((entry) => entry.slug),
 		];
 
-		return this._dishService
-			.dishes()
+		const dishesToFilter = this.filteredDishes() ?? this._dishService.dishes();
+
+		return dishesToFilter
 			.filter((dish) => categorySlugs.includes(dish.categorySlug))
 			.map((dish) => this._toMenuDish(dish));
 	}

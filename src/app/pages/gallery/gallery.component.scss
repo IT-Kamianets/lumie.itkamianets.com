@@ -16,9 +16,20 @@
 		filter 200ms ease;
 }
 
-figure:hover .gallery-photo {
-	transform: scale(1.03);
-	filter: saturate(1.05);
+.gallery-thumb {
+	cursor: pointer;
+	transition:
+		transform 300ms ease,
+		filter 300ms ease;
+}
+
+.gallery-thumb:hover {
+	transform: scale(1.05);
+	filter: saturate(1.1);
+}
+
+.carousel-photo {
+	cursor: zoom-in;
 }
 
 .fullscreen-backdrop {
